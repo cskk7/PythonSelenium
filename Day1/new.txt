@@ -48,3 +48,6 @@ extent-config.xml
         </styles>
     </configuration>
 </extentreports>
+
+-----------------------------------------------------
+plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
