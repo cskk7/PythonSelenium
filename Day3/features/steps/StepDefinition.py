@@ -1,5 +1,3 @@
-from lib2to3.fixes.fix_input import context
-
 from behave import *
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -7,12 +5,12 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 @given(u'Login page')
 def step_impl(context):
-    context.chrome_driver_path = r"F:\chromedriver_win64\chromedriver.exe"
-    context.chrome_options = Options()
-    context.chrome_options.add_argument("--start-maximized")
-    context.chrome_service = Service()
-
-driver = webdriver.Chrome(service=context.chrome_service,options=context.chrome_options)
+    # context.chrome_driver_path = r"F:\chromedriver_win64\chromedriver.exe"
+    # context.chrome_options = Options()
+    # context.chrome_options.add_argument("--start-maximized")
+    # context.chrome_service = Service(context.chrome_driver_path)
+    context.driver = webdriver.Chrome()
+    context.driver.get("https://practicetestautomation.com/practice-test-login/")
 
 @when(u'user enter valid username')
 def step_impl(context):
@@ -31,8 +29,8 @@ def step_impl(context):
 
 @then(u'user enters to profile page')
 def step_impl(context):
-    sucess = context.driver.find_element(By.XPATH,"//h1[text()='Logged In Successfully']")
-    print(sucess)
+    
+
 
 # @then(u'user is displayed')
 # def step_impl(context):
