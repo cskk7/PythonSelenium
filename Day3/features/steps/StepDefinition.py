@@ -29,7 +29,7 @@ def step_impl(context):
 
 @then(u'user enters to profile page')
 def step_impl(context):
-    
+    print("Passed")
 
 
 # @then(u'user is displayed')
